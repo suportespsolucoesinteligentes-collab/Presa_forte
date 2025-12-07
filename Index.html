@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presa Forte Biotério | Nutrição para Animais Exóticos</title>
+    <meta name="description" content="Alimento vivo e congelado de alta qualidade para répteis e aves de rapina. Roedores e insetos com rigoroso controle sanitário.">
+    
+    <!-- Fontes Google (Tipografia Profissional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIÁVEIS DE COR E CONFIGURAÇÕES GERAIS --- */
+        :root {
+            /* Cores Institucionais */
+            --color-primary: #2E4A33;    /* Verde Floresta/Militar Escuro */
+            --color-secondary: #3A3A3A;  /* Cinza Chumbo Profissional */
+            --color-accent: #F59E0B;     /* Amarelo/Laranja Queimado (Atenção) */
+            --color-accent-hover: #D97706;
+            --color-light: #F3F4F6;      /* Cinza muito claro (Fundo) */
+            --color-white: #FFFFFF;
+            --color-danger: #EF4444;
+
+            /* Espaçamento e Layout */
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-secondary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- COMPONENTES --- */
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--color-accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* Mobile Menu Toggle (Simplified) */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(46, 74, 51, 0.85), rgba(46, 74, 51, 0.7)), 
+                        url('https://images.unsplash.com/photo-1594916322880-9994c9228816?q=80&w=2070&auto=format&fit=crop'); /* Placeholder image of nature/reptile vibe */
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #E5E7EB;
+        }
+
+        /* --- DIFERENCIAIS (ICONS) --- */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--color-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: #e5e5e5;
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- PRODUTOS --- */
+        .products {
+            padding: 4rem 0;
+            background-color: #F8FAF9;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-header {
+            height: 150px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .bg-rodent { background-color: #78716c; }
+        .bg-insect { background-color: #a16207; }
+        .bg-live { background-color: #65a30d; }
+        .bg-supp { background-color: #0ea5e9; }
+
+        .product-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-body h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-body p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* --- CONTATO E FORMULÁRIO --- */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--color-white);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(46, 74, 51, 0.1);
+        }
+
+        /* Checkbox grid styling */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-secondary);
+            color: #9CA3AF;
+            padding: 3rem 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-col ul li a {
+            color: #9CA3AF;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--color-accent);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* --- WHATSAPP FLOATING BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-animation 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); }
+            100% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+        }
+
+        /* --- MEDIA QUERIES (DESKTOP) --- */
+        @media (min-width: 768px) {
+            .mobile-toggle { display: none; }
+            .nav-menu { display: flex; }
+            
+            .hero h1 { font-size: 3.5rem; }
+            
+            .features-grid { grid-template-columns: repeat(4, 1fr); }
+            
+            .products-grid { grid-template-columns: repeat(4, 1fr); }
+            
+            .contact-wrapper { grid-template-columns: 1fr 2fr; }
+            
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        @media (max-width: 767px) {
+            .nav-menu {
+                display: none; /* Hide for now to keep code simple, ideally JS toggles this */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-primary);
+                padding: 1rem;
+                text-align: center;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .mobile-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-paw"></i> PRESA FORTE
+            </a>
+            
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#hero" class="nav-link">Início</a></li>
+                    <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Qualidade</a></li>
+                    <li><a href="#contato" class="nav-link">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <h1>NUTRIÇÃO DE ALTA PERFORMANCE</h1>
+            <p>Alimento vivo e congelado com rigoroso controle sanitário para répteis, aves de rapina e animais exóticos.</p>
+            <a href="#produtos" class="btn btn-primary">Ver Tabela de Preços</a>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que a Presa Forte?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-virus feature-icon"></i>
+                    <h3>Controle Sanitário</h3>
+                    <p>Colônias livres de parasitas, criadas em ambiente estéril e controlado.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck-fast feature-icon"></i>
+                    <h3>Envio Rápido</h3>
+                    <p>Logística otimizada para garantir que o alimento chegue fresco ou congelado.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-box-open feature-icon"></i>
+                    <h3>Embalagem Térmica</h3>
+                    <p>Caixas de isopor de alta densidade e gelo seco para manter a temperatura.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dna feature-icon"></i>
+                    <h3>Nutrição Balanceada</h3>
+                    <p>Nossos animais são alimentados com ração super premium (Gut-loading).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos</h2>
+            </div>
+            <div class="products-grid">
+                <!-- Card 1 -->
+                <div class="product-card">
+                    <div class="product-header bg-rodent">
+                        <i class="fas fa-otter"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>Roedores Congelados</h3>
+                        <p>Ratos e camundongos de diversos tamanhos (Pinky a Adulto). Abate humanitário (CO2) e congelamento rápido.</p>
+                        <a href="#contato" class="btn btn-outline" onclick="selectProduct('Roedores')">Cotar</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card">
+                    <div class="product-header bg-live">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>Alimento Vivo</h3>
+                        <p>Grilos e baratas vivas para estimular o instinto de caça do seu animal. Saudáveis e ativos.</p>
+                        <a href="#contato" class="btn btn-outline" onclick="selectProduct('Alimento Vivo')">Cotar</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card">
+                    <div class="product-header bg-insect">
+                        <i class="fas fa-locust"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>Insetos Especiais</h3>
+                        <p>Tenébrios gigantes, Baratas de Madagascar e Dubias. Ricos em proteína e cálcio.</p>
+                        <a href="#contato" class="btn btn-outline" onclick="selectProduct('Insetos')">Cotar</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card">
+                    <div class="product-header bg-supp">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>Suplementos</h3>
+                        <p>Cálcio, vitaminas e substratos de alta qualidade para complementar a dieta.</p>
+                        <a href="#contato" class="btn btn-outline" onclick="selectProduct('Suplementos')">Cotar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato / Orçamento -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solicite um Orçamento</h2>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Info Lateral -->
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>(11) 99999-9999</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@presaforte.com.br</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>São Paulo, SP - Envio para todo Brasil</span>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                        Atendimento de Segunda a Sexta, das 09h às 18h.
+                    </p>
+                </div>
+
+                <!-- Formulário -->
+                <form id="orderForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome Completo *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp" class="form-label">WhatsApp com DDD *</label>
+                        <input type="tel" id="whatsapp" class="form-control" placeholder="(00) 00000-0000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="animal" class="form-label">Qual animal você possui? *</label>
+                        <input type="text" id="animal" class="form-control" placeholder="Ex: Jiboia, Gecko, Coruja..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Tenho interesse em:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item"><input type="checkbox" name="product" value="Roedores"> Roedores Congelados</label>
+                            <label class="checkbox-item"><input type="checkbox" name="product" value="Vivo"> Alimento Vivo</label>
+                            <label class="checkbox-item"><input type="checkbox" name="product" value="Insetos"> Insetos</label>
+                            <label class="checkbox-item"><input type="checkbox" name="product" value="Suplementos"> Suplementos</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensagem ou Quantidades</label>
+                        <textarea id="message" rows="4" class="form-control" placeholder="Ex: Gostaria de cotar 10 ratos adultos e 1kg de tenébrio..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Orçamento</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Presa Forte Biotério</h4>
+                    <p>Compromisso com a nutrição e bem-estar do seu animal exótico. Qualidade comprovada e segurança sanitária.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#diferenciais">Manejo Sanitário</a></li>
+                        <li><a href="#contato">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Envio</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Presa Forte Biotério. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="Fale no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Simples -->
+    <script>
+        // Função para Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Função auxiliar para pré-selecionar checkboxes vindo dos cards
+        function selectProduct(productName) {
+            const checkboxes = document.querySelectorAll('input[name="product"]');
+            checkboxes.forEach(cb => {
+                if (cb.value.includes(productName)) {
+                    cb.checked = true;
+                }
+            });
+        }
+
+        // Validação e Envio do Formulário
+        function submitForm(event) {
+            event.preventDefault(); // Impede o recarregamento da página
+
+            // Captura os valores
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const animal = document.getElementById('animal').value;
+            
+            // Verifica checkboxes
+            const checkedProducts = document.querySelectorAll('input[name="product"]:checked');
+            
+            // Validação simples extra (embora o HTML 'required' já ajude)
+            if(name.trim() === '' || whatsapp.trim() === '' || animal.trim() === '') {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return;
+            }
+
+            if(checkedProducts.length === 0) {
+                alert("Por favor, selecione pelo menos um tipo de produto de interesse.");
+                return;
+            }
+
+            // Simulação de sucesso
+            alert(`Obrigado, ${name}! Recebemos sua solicitação de orçamento para seu ${animal}. Entraremos em contato via WhatsApp (${whatsapp}) em breve.`);
+            
+            // Limpa o formulário
+            document.getElementById('orderForm').reset();
+        }
+    </script>
+</body>
+</html>
+

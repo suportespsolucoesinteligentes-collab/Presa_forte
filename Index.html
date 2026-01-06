@@ -221,27 +221,41 @@
             .footer-grid { grid-template-columns: repeat(3, 1fr); }
         }
         
+                /* --- MEDIA QUERIES MOBILE (AJUSTE FINO DO BANNER) --- */
         @media (max-width: 767px) {
             .hero {
-                background-size: contain;
+                /* 1. Imagem no topo, sem cortar */
+                background-size: 100% auto; /* Largura 100%, altura automática */
                 background-position: top center;
                 background-attachment: scroll;
-                height: 85vh; 
-                align-items: flex-end; 
+                
+                /* 2. O GRANDE TRUQUE PARA TIRAR O ESPAÇO PRETO */
+                height: auto; /* A altura se adapta ao conteúdo, não força a tela toda */
+                min-height: 50vh; /* Mínimo de metade da tela */
+                
+                /* 3. Alinhamento */
+                align-items: flex-start; /* Começa do topo */
+                
+                /* 4. Empurrar o texto para baixo da imagem */
+                /* 65vw significa: "Desça 65% da largura da tela". 
+                   Isso cria o espaço exato para a imagem da cobra aparecer sem texto em cima. */
+                padding-top: 65vw; 
                 padding-bottom: 50px;
-                padding-top: 0;
             }
 
             .hero-content {
                 width: 100%;
                 padding: 20px;
-                background: linear-gradient(transparent, rgba(0,0,0,0.9) 20%);
+                /* Removemos o gradiente preto pesado, pois agora o texto fica logo abaixo da imagem */
+                background: transparent; 
             }
             
-            /* Ajuste das Logos no Mobile */
-            .clients-grid { gap: 20px; }
-            .client-logo { height: 93px; }
+            /* Ajuste para o texto subir um pouco mais se achar que ficou longe */
+            .hero h1 {
+                margin-top: -20px; 
+            }
 
+            /* Restante do menu continua igual */
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -258,6 +272,7 @@
             .nav-menu.active { display: flex; }
             .mobile-toggle { display: block; }
         }
+    
     </style>
 </head>
 <body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Presa Forte Biotério | Atendemos SP Capital, Litoral e Vale do Ribeira</title>
+    <title>Biotério Presa Forte - Alimento Vivo e Congelado (SP e Litoral)</title>
     
     <meta name="description" content="Biotério de alimento vivo e congelado. Entregas rápidas em Santos, Praia Grande, São Vicente, Itanhaém, Mongaguá e SP Capital. Ratos Twister e Insetos.">
     
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Presa Forte - Alimento para Répteis (Litoral e Capital)">
     <meta property="og:description" content="Entregas em Santos, Praia Grande, Itanhaém e SP Capital. Peça já via WhatsApp!">
-    <meta property="og:url" content="https://bioteriopresaforte.netlify.app/">
+    <meta property="og:url" content="https://presaforte.site/">
     <meta property="og:site_name" content="Presa Forte Biotério">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
         /* --- HERO SECTION --- */
         .hero {
             background-color: #0d0d0d;
-            background-image: url('1000648370.png'); 
+            background-image: url('1000648370.png'); /* Lembre de mudar o nome dessa imagem depois */
             background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat;
@@ -122,9 +122,27 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.8) 100%);
         }
 
-        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; text-shadow: 2px 2px 5px rgba(0,0,0,1); }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,1); }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        
+        .hero h1 { 
+            font-size: 2.8rem; 
+            margin-bottom: 0.5rem; 
+            line-height: 1.2; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,1);
+            color: #fff; 
+        }
+        
+        .hero h2.hero-subtitle {
+            font-size: 1.4rem;
+            color: #e5e5e5;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-transform: none; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,1); }
 
 
         /* --- SEÇÕES PADRÃO --- */
@@ -134,7 +152,7 @@
         .feature-card:hover { border-color: #e5e5e5; box-shadow: var(--shadow); transform: translateY(-5px); }
         .feature-icon { font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem; }
 
-        /* --- NOVA SEÇÃO: CLIENTES / PARCEIROS --- */
+        /* --- CLIENTES / PARCEIROS --- */
         .clients {
             padding: 3rem 0;
             background-color: #F9FAFB;
@@ -151,10 +169,9 @@
         }
 
         .client-logo {
-            height: 90px; /* Altura padrão para todas as logos */
+            height: 90px; 
             width: auto;
             object-fit: contain;
-            /* Filtro Cinza: Deixa profissional */
             filter: grayscale(20%);
             opacity: 0.5;
             transition: all 0.4s ease;
@@ -162,13 +179,10 @@
         }
 
         .client-logo:hover {
-            /* Ao passar o mouse: Fica colorido e destaca */
             filter: grayscale(0%);
             opacity: 1;
             transform: scale(1.1);
         }
-
-        /* --- FIM SEÇÃO CLIENTES --- */
 
         .products { padding: 4rem 0; background-color: #F8FAF9; }
         .products-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
@@ -221,24 +235,14 @@
             .footer-grid { grid-template-columns: repeat(3, 1fr); }
         }
         
-                /* --- MEDIA QUERIES MOBILE (AJUSTE FINO DO BANNER) --- */
         @media (max-width: 767px) {
             .hero {
-                /* 1. Imagem no topo, sem cortar */
-                background-size: 100% auto; /* Largura 100%, altura automática */
+                background-size: 100% auto; 
                 background-position: top center;
                 background-attachment: scroll;
-                
-                /* 2. O GRANDE TRUQUE PARA TIRAR O ESPAÇO PRETO */
-                height: auto; /* A altura se adapta ao conteúdo, não força a tela toda */
-                min-height: 50vh; /* Mínimo de metade da tela */
-                
-                /* 3. Alinhamento */
-                align-items: flex-start; /* Começa do topo */
-                
-                /* 4. Empurrar o texto para baixo da imagem */
-                /* 65vw significa: "Desça 65% da largura da tela". 
-                   Isso cria o espaço exato para a imagem da cobra aparecer sem texto em cima. */
+                height: auto; 
+                min-height: 50vh; 
+                align-items: flex-start; 
                 padding-top: 65vw; 
                 padding-bottom: 50px;
             }
@@ -246,16 +250,14 @@
             .hero-content {
                 width: 100%;
                 padding: 20px;
-                /* Removemos o gradiente preto pesado, pois agora o texto fica logo abaixo da imagem */
                 background: transparent; 
             }
             
-            /* Ajuste para o texto subir um pouco mais se achar que ficou longe */
             .hero h1 {
-                margin-top: -20px; 
+                margin-top: -20px;
+                font-size: 2rem; 
             }
 
-            /* Restante do menu continua igual */
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -272,7 +274,88 @@
             .nav-menu.active { display: flex; }
             .mobile-toggle { display: block; }
         }
-    
+        
+        /* CSS DA NOTIFICAÇÃO (Mantido) */
+        .sales-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #fff;
+            width: 320px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 9999;
+            transform: translateX(-150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .sales-notification.active {
+            transform: translateX(0);
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            color: var(--color-primary);
+            background: #f0fdf4;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 2px;
+        }
+
+        .notification-message {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.2;
+        }
+
+        .notification-time {
+            display: block;
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 3px;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #999;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 8px;
+        }
+
+        .notification-close:hover {
+            color: red;
+        }
+
+        @media (max-width: 480px) {
+            .sales-notification {
+                width: 90%; 
+                left: 5%;
+                bottom: 90px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -294,8 +377,11 @@
 
     <section id="hero" class="hero">
         <div class="container hero-content">
-            <h1>ENTREGAS EM SANTOS, PG E CAPITAL</h1>
-            <p>Nutrição de alta performance. Twister, Camundongos e Insetos. Atendemos Baixada Santista e São Paulo Capital.</p>
+            <h1>BIOTÉRIO PRESA FORTE: ALIMENTO VIVO E CONGELADO</h1>
+            
+            <h2 class="hero-subtitle">Entregas em Santos, Praia Grande e SP Capital</h2>
+            
+            <p>Nutrição de alta performance para seus répteis. Twister, Camundongos e Insetos.</p>
             <a href="#tabela" class="btn btn-primary">Ver Tabela de Preços</a>
         </div>
     </section>
@@ -319,11 +405,8 @@
             </div>
             <div class="clients-grid">
                 <img src="Petz.png" alt="Petz" class="client-logo">
-                
                 <img src="Logo_Cobasi.png" alt="Cobasi" class="client-logo">
-
                 <img src="logo_criadores.png" alt="Casa dos criadores" class="client-logo">
-
                 <img src="agro_bill.png" alt="Agro Bill" class="client-logo">
             </div>
             <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9rem;">
@@ -449,7 +532,7 @@
                         <label for="cidade" class="form-label">Cidade / Bairro *</label>
                         <input type="text" name="cidade" id="cidade" class="form-control" placeholder="Ex: Santos - Gonzaga / SP - Moema..." required>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="animal" class="form-label">Qual animal você possui? *</label>
                         <input type="text" name="animal" id="animal" class="form-control" placeholder="Ex: Jiboia, Gecko, Coruja..." required>
@@ -480,11 +563,23 @@
                 <div class="footer-col"> <h4>Cidades Atendidas</h4> <ul> <li>Santos</li> <li>São Vicente</li> <li>Praia Grande</li> <li>Mongaguá e Itanhaém</li> <li>São Paulo Capital</li> </ul> </div>
                 <div class="footer-col"> <h4>Legal</h4> <ul> <li><a href="#">Política de Privacidade</a></li> <li><a href="#">Termos de Envio</a></li> <li><a href="#">FAQ</a></li> </ul> </div>
             </div>
-            <div class="copyright"> <p>&copy; 2023 Presa Forte Biotério. Mongaguá - SP.</p> </div>
+            <div class="copyright"> <p>&copy; <span id="year"></span> Presa Forte Biotério. Mongaguá - SP.</p> </div>
+            <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 
     <a href="https://wa.me/5513992074922?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Presa%20Forte%20e%20gostaria%20de%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank" aria-label="Fale no WhatsApp"> <i class="fab fa-whatsapp"></i> </a>
+
+    <div id="sales-notification" class="sales-notification">
+        <div class="notification-icon">
+            <i class="fas fa-box-open"></i> </div>
+        <div class="notification-content">
+            <p class="notification-title">Novo Pedido Realizado</p>
+            <p id="notification-message" class="notification-message">Carregando...</p>
+            <small class="notification-time">Agora mesmo</small>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">&times;</button>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -509,14 +604,12 @@
             const whatsapp = document.getElementById('whatsapp').value;
             const cidade = document.getElementById('cidade').value;
 
-            // Envia para a Netlify
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString(),
             })
             .then(() => {
-                // Sucesso: Mostra o modal BONITO (SweetAlert)
                 Swal.fire({
                     title: 'Pedido Recebido!',
                     html: `Obrigado, <b>${nome}</b>!<br>Calcularemos o frete para <b>${cidade}</b> e te chamaremos no WhatsApp: <b>${whatsapp}</b>.`,
@@ -536,6 +629,46 @@
                     confirmButtonText: 'Fechar'
                 });
             });
+        }
+        
+        /* --- SCRIPT DE PROVA SOCIAL --- */
+        const notification = document.getElementById('sales-notification');
+        const messageElement = document.getElementById('notification-message');
+
+        const vendasRecentes = [
+            { nome: "Bruno", cidade: "Mongaguá", item: "5 Ratos Twister" },
+            { nome: "Carla", cidade: "Santos", item: "10 Camundongos Pinky" },
+            { nome: "Rafael", cidade: "Praia Grande", item: "Kit Alimento Vivo" },
+            { nome: "PetShop Animalia", cidade: "Itanhaém", item: "Pacote Atacado" },
+            { nome: "Lucas", cidade: "São Vicente", item: "Baratas de Madagascar" },
+            { nome: "Fernanda", cidade: "Cubatão", item: "3 Ratos Adultos" },
+            { nome: "Cliente", cidade: "São Paulo", item: "50 Baratas Dubia" },
+            { nome: "André", cidade: "Peruíbe", item: "Suplemento de Cálcio" }
+        ];
+
+        function showNotification() {
+            // Verifica se o elemento existe antes de tentar mudar o HTML (Segurança)
+            if(!notification || !messageElement) return;
+
+            const venda = vendasRecentes[Math.floor(Math.random() * vendasRecentes.length)];
+            
+            messageElement.innerHTML = `<strong>${venda.nome}</strong> de ${venda.cidade}<br>comprou ${venda.item}`;
+            
+            notification.classList.add('active');
+            
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 5000);
+        }
+
+        // Delay inicial e Loop
+        setTimeout(() => {
+            showNotification();
+            setInterval(showNotification, 13000);
+        }, 10000);
+
+        function closeNotification() {
+            if(notification) notification.classList.remove('active');
         }
     </script>
 </body>
